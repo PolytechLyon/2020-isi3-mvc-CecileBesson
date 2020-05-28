@@ -4,9 +4,9 @@
 > **Ne restez pas bloqués bêtement, demander de l'aide**
 > Ne copier pas le code de votre voisin, ça se voit.
 
-Nom/Prénom: 
+Nom/Prénom: Cécile Besson
 
-Lien du codesandbox: `.......`
+Lien du codesandbox: https://codesandbox.io/s/github/PolytechLyon/2020-isi3-mvc-CecileBesson
 
 > Pour générer un codesandbox associé à votre code, [suiver cette doc](https://codesandbox.io/docs/importing#import-from-github)
 
@@ -20,15 +20,19 @@ Il est inventé par [John Horton Conway](https://fr.wikipedia.org/wiki/John_Hort
 1. Expliquer le design pattern MVC à l'aide d'un schéma à insérer directement ici. 
 Utiliser un outils commde Dia pour le représenter. Je veux **votre** schéma, pas un de ceux qu'on peut trouver sur le net.
 
-![Schema pattern](./src/mvc.png)
+![Schema pattern](mvc.png)
 2. Expliquer ce pattern en complétant ce texte.
 
-Le pattern MVP, vise à découper le modèle, de la vue et du controleur afin de rendre le code plus modulaire .
-Les responsabilités ne sont alors plus interdépendantes .
+Le pattern MVC, vise à découper le modèle, de la vue et du controleur afin de rendre le code plus modulaire .
+Les responsabilités ne sont alors plus groupées.
 On peut ainsi changer l'aspect visuel de son application sans pour autant impacter le modèle.
 
 3. Expliquer dans quels cas on doit privilégier le pattern MVC.
 
+Le pattern mvc est beaucoup utilisé pour les applications web. Il est à privilégier si l'on souhaite 
+séparer l'affichage des informations, l'accès aux données et les actions de l'utilisateur.
+L'utilisation du pattern mvc permet aussi de simplifier les opérations de maintenance puisque les responsabilités sont
+découpées. Il permet aussi de répartir plus facilement les tâches entre les développeurs. 
 ## A faire (obligatoire)
 
 - Render le jeu fonctionel tout en respectant le design pattern MVC.
@@ -47,6 +51,11 @@ L'usage d'une callback permet ici de pointer vers la fonction d'affichage afin d
 L'objet _Model_ n'a pas de lien avec la vue pourtant grâce à la fonction callback il peut notifier la `vue.
 
 2. Insérer ici un UML montrant le pattern Observer-Observable liés aux objects de ce TP.
+
+![Schema pattern](observer_observable.png)
+
+La classe Model possède un attribut displayCallback qui pointe vers la fonction à appeler, ici drawGame().
+Ici la fonction drawGame joue directement le rôle d'observeur, elle est directement appelée par updated().
 
 ## Optionel
 
